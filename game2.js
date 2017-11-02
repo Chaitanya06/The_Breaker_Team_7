@@ -125,7 +125,7 @@
             }
         }
 
-        function collisionDetection() {
+        function collisionDetection() {g
             for(c=0; c<ballRows; c++) {
                 for(r=0; r<ballColumns; r++) {       
                     var b = balls[c][r];
@@ -176,7 +176,7 @@
         }
 
         function drawScore() {
-            ctx.font = "16px Arial";
+            ctx.font = "20px Arial";
             ctx.fillStyle = "#000000";
 			var level2_score=score+75;
             ctx.fillText("Score: "+level2_score, 8, 20);
@@ -193,13 +193,17 @@
 
         function saveHighscore(highscore){
             //console.log(localStorage.getItem("BreakerUsername"));
-            // Store
+            // Store			
 			var hscore = localStorage.getItem("BreakerScore1");
 			var user = localStorage.getItem("BreakerUsername");
 			if(highscore>hscore){
 				localStorage.setItem("HighscoreUsername", user);
 				localStorage.setItem("BreakerScore1", highscore);
 			}
+			
+			ctx.font = "20px Arial";
+            ctx.fillStyle = "#000000";
+			ctx.fillText("HighScore: "+hscore, 250, 20);;
         }
 
         function motionBall(){
@@ -211,6 +215,7 @@
 	            drawBalls();
 	            drawScore();       
 	            drawLives();
+				saveHighscore();
 	        } 
 			if(lives==0) {
 				audio_main.muted=true; 

@@ -177,9 +177,10 @@
         }
 
         function drawScore() {
-            ctx.font = "16px Arial";
+            ctx.font = "20px Arial";
             ctx.fillStyle = "#000000";
-            ctx.fillText("Score: "+score, 8, 20);
+            ctx.fillText("Score: "+score, 8, 20);					
+           
         }
 
         function drawLives() {
@@ -190,6 +191,8 @@
                 ctx.drawImage(heart,i*40+(mybb.width-120),5,20,20);
             }
         }
+		
+		
 
         function saveHighscore(highscore){
             //console.log(localStorage.getItem("BreakerUsername"));
@@ -200,6 +203,9 @@
 				localStorage.setItem("HighscoreUsername", user);
 				localStorage.setItem("BreakerScore1", highscore);
 			}
+			ctx.font = "20px Arial";
+            ctx.fillStyle = "#000000";
+			ctx.fillText("HighScore: "+hscore, 250, 20);
         }
 
         function motionBall(){
@@ -211,6 +217,7 @@
 	            drawBalls();
 	            drawScore();       
 	            drawLives();
+				saveHighscore();
 	        } 
 			if(lives==0)
 				//else
@@ -226,7 +233,8 @@
                 gradient.addColorStop("1.0", "red");
                 // Fill with gradient
                 ctx.fillStyle = gradient; 
-				ctx.fillText("You Lost! Please Retry", 130, 190);				
+				ctx.fillText("You Lost! Please Retry", 130, 190);
+				 ctx.fillText("Score: "+score, 250, 250);
                 var retry = document.createElement("A");
 				var t = document.createTextNode("Retry");
 				retry.setAttribute("href", "level1.html");
