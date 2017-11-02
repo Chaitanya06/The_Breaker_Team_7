@@ -125,7 +125,7 @@
             }
         }
 
-        function collisionDetection() {g
+        function collisionDetection() {
             for(c=0; c<ballRows; c++) {
                 for(r=0; r<ballColumns; r++) {       
                     var b = balls[c][r];
