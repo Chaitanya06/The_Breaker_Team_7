@@ -1,0 +1,114 @@
+<html>
+<style>
+
+#tweety{
+     padding: 0;
+
+    display: block;
+    position: absolute;
+    top: 210px;
+    bottom: 0;
+    left: 10px;
+    right: 0;
+}
+
+#msg{
+    padding: 0;
+   
+    display: block;
+    position: absolute;
+    top: 150px;
+   
+    bottom: 0;
+    left: 0px;
+    right: 0;
+
+}
+.animate
+{
+	transition: all 0.1s;
+	-webkit-transition: all 0.1s;
+}
+
+.action-button
+{
+	position: relative;
+	padding: 10px 40px;
+  margin: 0px 10px 10px 0px;
+  float: left;
+	border-radius: 10px;
+	font-family: 'Pacifico', cursive;
+	font-size: 25px;
+	color: #FFF;
+	text-decoration: none;	
+}
+
+.blue
+{
+	background-color: #3498DB;
+	border-bottom: 5px solid #2980B9;
+	text-shadow: 0px -2px #2980B9;
+}
+
+
+
+.action-button:active
+{
+	transform: translate(0px,5px);
+  -webkit-transform: translate(0px,5px);
+	border-bottom: 1px solid;
+}
+#retry
+{
+    padding: 0;
+    width : 170px;
+    top: 70px;
+    bottom: 0;
+    left: 300px;
+    right: 0;
+}
+#level{
+
+    padding: 0;
+    width : 170px;
+    top: 70px;
+    bottom: 0;
+    left: 350px;
+    right: 0;
+
+}
+</style>
+<!-- <script type="text/javascript" src="custommain.js"></script> -->
+<!-- <link href="bootstrap.css" rel="stylesheet" type="text/css" /> -->
+<!-- <link href="customStyles.css" rel="stylesheet" type="text/css" /> -->
+<body>
+
+<div id="content1">
+
+<img  id="msg" src="images/succesgif.gif" style="left:220px;" ></img>
+<button onclick="window.location.href='level1.html'" id="retry" class="action-button shadow animate blue" >Retry</button>
+<button class="action-button shadow animate blue" onclick="window.location.href='level2.html'" id="level">Next Level </button>
+</div>
+<script>
+var theme=window.localStorage.getItem("suc_theme");
+console.log(theme);
+
+if(theme==1)
+{
+document.body.style.background = "url('images/aqua1.jpg') 100%";
+}
+if(theme==2)
+{
+document.body.style.background = "url('images/aqua2.gif') 100%";
+}
+if(theme==3)
+{
+document.body.style.background = "url('images/loona.jpg') 100%";
+}
+if(theme==4)
+{
+document.body.style.background = "url('images/construction4.jpg') no-repeat";
+}
+</script>
+</body>
+</html>
