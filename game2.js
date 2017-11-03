@@ -250,6 +250,7 @@
             //if player is still alive;
             if(lives>0 ){
                 //bouncing ball back from left and right walls
+				saveHighscore(score+75);
                 if(xAxis + ballMotionX > mybb.width-radius || xAxis + ballMotionX+30 < radius) {
                     ballMotionX = -ballMotionX; 
                 }
