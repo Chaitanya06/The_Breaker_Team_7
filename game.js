@@ -314,7 +314,7 @@
         }
 
 		function reload(){
-			console.log('reload');
+			console.log('reload reload!1');
 			ctx.clearRect(0, 0, mybb.width, mybb.height);
 			//setTimeout(myFunction, 6000);
         }
